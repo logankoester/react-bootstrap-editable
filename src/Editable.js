@@ -74,7 +74,7 @@ export default class Editable extends React.Component{
                 break;
             case "textarea":
                 return (
-                    <Form>
+                    <Form tag={this.props.tag}>
                         <TextArea {...commonProps}/>
                         <div className="d-flex align-items-start">
                             <FormText className="mt-0">{this.state.validationText}</FormText>
@@ -89,7 +89,7 @@ export default class Editable extends React.Component{
                 return null
         }
         return(
-            <Form className={this.props.className}>
+            <Form tag={this.props.tag} className={this.props.className}>
                 <div className="align-items-baseline d-flex">
                     {component}
                 </div>
@@ -176,7 +176,7 @@ export default class Editable extends React.Component{
             ) : null;
 
             return(
-                <Form className={this.props.className} inline>
+                <Form tag={this.props.tag} className={this.props.className} inline>
                     {p && this.props.showText && <p className="my-0" style={{"whiteSpace": "pre-wrap"}}>{p}</p>}
                     {a && <a ref={this.clickableLink} className="ml-1 mt-auto" href="javascript:"
                              onClick={() => this.setState({isEditing: true})}>{a}</a>}
@@ -206,7 +206,8 @@ Editable.defaultProps = {
     onSubmit: null,
     onValidated: null,
     //select props
-    options: null
+    options: null,
+    tag: 'form',
 }
 Editable.propTypes = {
     type: PropTypes.oneOf(["textfield", "textarea", "select", "date", "file"]).isRequired,
@@ -230,4 +231,5 @@ Editable.propTypes = {
     onValidated: PropTypes.func,
     //select props
     options: PropTypes.array,
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 }
