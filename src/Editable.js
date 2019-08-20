@@ -219,7 +219,7 @@ Editable.propTypes = {
     showText: PropTypes.bool,
     disabled: PropTypes.bool,
     isValueClickable: PropTypes.bool,
-    editText: PropTypes.string,
+    editText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     //popover
     placement: PropTypes.oneOf(["auto", "auto-start", "auto-end", "top", "top-start", "top-end", "right", "right-start",
         "right-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end"]),
