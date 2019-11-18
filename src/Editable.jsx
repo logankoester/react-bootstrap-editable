@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types";
-import TextField from "./components/TextField";
-import TextArea from "./components/TextArea";
-import Select from "./components/Select";
-import Date from "./components/Date";
+import TextField from "./components/TextField.jsx";
+import TextArea from "./components/TextArea.jsx";
+import Select from "./components/Select.jsx";
+import Date from "./components/Date.jsx";
 import {Button, Form, PopoverHeader, PopoverBody, Popover, Spinner, FormText} from "reactstrap";
-import File from "./components/File";
+import File from "./components/File.jsx";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 //have to do this since tree shaking doesn't work for some reason...
 import {faCheck} from '@fortawesome/free-solid-svg-icons/faCheck';
